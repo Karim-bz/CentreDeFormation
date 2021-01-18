@@ -11,13 +11,17 @@ import { environment } from 'src/environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { LoginComponent } from './modules/authentification/login/login.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RegisterComponent } from './modules/authentification/register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     SearchTrainingComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +29,10 @@ import { LoginComponent } from './modules/authentification/login/login.component
     RouterModule,
     AngularFireModule.initializeApp(environment.firebase),
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    FlexLayoutModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
