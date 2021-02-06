@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Training } from 'src/app/trainings/training';
+import { Training } from 'src/app/trainings/Model/training';
 import { AngularFirestore } from '@angular/fire/firestore';
 @Injectable({
   providedIn: 'root'
@@ -18,10 +18,10 @@ export class TrainingsService {
 
   updateTraining(training: Training){
     delete training.id;
-    this.firestore.doc('trainings/' + training.id).update(training);
+    this.firestore.doc('Trainings/' + training.id).update(training);
   }
 
-  deleteTraining(trainingId: string){
-    this.firestore.doc('trainings/' + trainingId).delete();
+  deleteTraining(training_Id: string){
+    this.firestore.doc('Trainings/' + training_Id).delete();
   }
 }

@@ -1,13 +1,22 @@
-<p>list-trainings works!</p>
-<div *ngFor="let training of trainings">
-    <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-            <button class="btn btn-danger" (click)="deleteUser(user)"> Delete</button>
-            <button class="btn btn-success" (click)="editUser(user)" style="margin-left: 20px;"> Edit</button>
+<div class="row p-2">
+    <div class="col-md-3" *ngFor ="let item of training">
+        <div class="card">
+            <div class="card-body">
+                <div class="card-title">
+                    Name: {{item.titre}}
+                </div>
+                <div class="card-subtitle">
+                    description : {{item.description}}
+                </div>
+                <div class="card-text">
+                   Formateur : {{item.formateur}}
+                </div>
+                <span>
+                    <a href="#" class="btn btn-success btn-xs">Detail Employee</a>
+                    <a href="#" (click)="editTraining(item)" class="btn btn-primary btn-xs">Edit Employee</a>
+                    <a (click)= "deleteTraining(item.id)" class="btn btn-danger btn-xs">Delete Employee</a>
+                </span>
+            </div>
         </div>
     </div>
 </div>

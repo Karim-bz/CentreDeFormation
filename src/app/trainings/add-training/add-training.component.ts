@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormArray, FormControl, Validators } from '@angular/forms';
 import { TrainingsService } from '../service/trainings.service';
-import { Training } from '../training';
+import { Training } from '../Model/training';
 
 @Component({
   selector: 'app-add-training',
