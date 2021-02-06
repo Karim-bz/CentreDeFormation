@@ -1,0 +1,108 @@
+<div class="content">
+    <form class="training-form" [formGroup]="trainingForm" (ngSubmit)="onSubmit()">
+        <h1>Ajouter une Formation</h1>
+        <mat-form-field appearance="fill">
+            <mat-label> Titre de Formation </mat-label>
+            <input matInput type="text" formControlName="trainingTitreCtrl" required>
+            <mat-error>S'il vous plait tapez le nom du Formation</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Description</mat-label>
+            <textarea matInput type="text" formControlName="trainingDescriptionCtrl" ></textarea>
+        </mat-form-field>
+        
+        <mat-form-field appearance="fill">
+            <mat-label> Charge Horaire </mat-label>
+            <input matInput type="number" formControlName="trainingChargeHoraireCtrl" required>
+            <mat-error>Le Charge Horaire est requis</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Nom de Formateur</mat-label>
+            <input matInput type="text" formControlName="trainingFormateurCtrl" required>
+            <mat-error>Tapez le nom du Formateur</mat-error>
+        </mat-form-field>
+        
+        <div>
+            <label for="file">Choisir une fichier</label>   <br/>
+            <input type="file" id="file" (change)="handleFileInput($event.target.files)">
+        </div>  <br/>
+        
+        <mat-form-field appearance="fill">
+            <mat-label>Niveau de cours</mat-label>
+            <mat-select formControlName="trainingLevelCtrl" (change)="selectLevel($event)">
+                <mat-option *ngFor="let lev of levels" [value]="lev">{{lev}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <h3 class="session-title">Tags</h3>
+        <div formArrayName="trainingTagsCtrl">
+            <div class="column">
+                <div *ngFor="let tag of tagFormGroup.controls; let i = index;">
+                    <div class="row" [formGroupName]="i">
+                        <div class="form-group col-sm">
+                            <mat-form-field appearance="fill">
+                                <mat-label> Tag </mat-label>
+                                <input matInput type="text" formControlName="nameTag">
+                            </mat-form-field>
+                        </div>
+                        <div class="col-sm">
+                            <button class="btn btn-danger remove-tag" (click)="removeTag(i)" >-</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <button type="button" class="btn btn-success" (click)="addTag()" >Ajouter Une Tag</button> 
+            </div>
+        </div>
+
+        <h3 class="session-title">Les Sessions</h3>
+        <div formArrayName="trainingSessionsCtrl">
+            <div class="column">
+                <ng-container *ngFor="let session of sessionFormGroup.controls; let i = index;">
+                    <div class="row" [formGroupName]="i">
+                        <div class="form-group col-sm">
+                            <mat-form-field appearance="fill">
+                                <mat-label> Titre de Session </mat-label>
+                                <input matInput type="text" formControlName="name" required>
+                            </mat-form-field> 
+                        </div>
+                        <div class="form-group col-sm">
+                            <mat-form-field appearance="fill">
+                                <mat-label>Date de début</mat-label>
+                                <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="first" formControlName="startDate">
+                                <mat-datepicker-toggle matSuffix [for]="first"></mat-datepicker-toggle>
+                                <mat-datepicker #first></mat-datepicker>
+                            </mat-form-field>
+                        </div>
+                        <div class="form-group col-sm">
+                            <mat-form-field appearance="fill">
+                                <mat-label>Date de fin</mat-label>
+                                <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="end" formControlName="endDate">
+                                <mat-datepicker-toggle matSuffix [for]="end"></mat-datepicker-toggle>
+                                <mat-datepicker #end></mat-datepicker>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-sm">
+                            <button class="btn btn-danger remove-session" (click)="removeSession(i)" >Supprimer La Session</button>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <button type="button" class="btn btn-success" (click)="addSession()" >Ajouter Une Session</button> 
+            </div>
+        </div>
+        
+        
+        <div class="row">
+            <button mat-raised-button color="primary">Ajouter Une Formation</button>
+        </div>
+    </form>
+</div>

@@ -14,6 +14,10 @@ import { LoginComponent } from './modules/authentification/login/login.component
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './modules/authentification/register/register.component';
+import { AddTrainingComponent } from './trainings/add-training/add-training.component';
+import { MatNativeDateModule } from '@angular/material/core';
+import { EditTrainingComponent } from './trainings/edit-training/edit-training.component';
+import { ListTrainingsComponent } from './trainings/list-trainings/list-trainings.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +25,10 @@ import { RegisterComponent } from './modules/authentification/register/register.
     HomePageComponent,
     SearchTrainingComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    AddTrainingComponent,
+    EditTrainingComponent,
+    ListTrainingsComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +39,8 @@ import { RegisterComponent } from './modules/authentification/register/register.
     MaterialModule,
     FlexLayoutModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]

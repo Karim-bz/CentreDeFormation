@@ -1,0 +1,14 @@
+.content{
+    padding: 80px 100px 30px 15%;
+}
+.training-form{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.session-title{
+    font-weight: bold;
+}
+mat-form-field{
+    width: 400px;
+}
