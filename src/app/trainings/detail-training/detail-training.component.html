@@ -1,0 +1,50 @@
+<div class="container justify-content-center">
+    <h1 class="text-center title" [ngStyle]="{'color':getColor(training?.level)}"> {{training?.titre}} </h1>
+
+    <p class="section-title">Description sur la formation </p>
+    <p>{{training?.description}}</p>
+    
+    
+    
+    <p class="section-title">Charge Horaire</p>
+    <p>{{training?.chargeHoraire}} Heure(s)</p>
+    
+    
+
+    <p class="section-title">Le Nom du Formateur</p>
+    <p>{{training?.formateur}}</p>
+    
+    
+
+    <p class="section-title">La liste des Sessions </p>
+    <!-- <p>{{training.sessionsList}}</p> -->
+    <table class="table">
+        <thead>
+            <tr>
+            <th scope="col">Le nom du session</th>
+            <th scope="col">Date de début</th>
+            <th scope="col">Date de Fin</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let session of training?.sessionsList">
+            <tr>
+            <th scope="row">{{session.name}}</th>
+            <td>{{session.startDate }}</td>
+            <td>{{session.endDate }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    
+
+    <p class="section-title">Le Programme En PDF </p>
+    <!-- fileUploder Code -->
+    
+    
+
+    <p class="section-title">La liste des Tags</p>
+    <ul *ngFor="let item of training?.tagsList">
+        <li>{{item.nameTag}}</li>
+    </ul>
+    <!-- <p>{{training.tagsList[1].name}}</p> -->
+</div>

@@ -12,6 +12,10 @@ export class TrainingsService {
     return this.firestore.collection('Trainings').snapshotChanges();
   }
 
+  getOneTraining(training_Id) {
+    return this.firestore.collection('Trainings').doc(training_Id).valueChanges();
+  }
+
   createTraining(training: Training){
     return this.firestore.collection('Trainings').add(training);
   }

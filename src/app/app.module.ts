@@ -18,6 +18,7 @@ import { AddTrainingComponent } from './trainings/add-training/add-training.comp
 import { MatNativeDateModule } from '@angular/material/core';
 import { EditTrainingComponent } from './trainings/edit-training/edit-training.component';
 import { ListTrainingsComponent } from './trainings/list-trainings/list-trainings.component';
+import { DetailTrainingComponent } from './trainings/detail-training/detail-training.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ListTrainingsComponent } from './trainings/list-trainings/list-training
     RegisterComponent,
     AddTrainingComponent,
     EditTrainingComponent,
-    ListTrainingsComponent
+    ListTrainingsComponent,
+    DetailTrainingComponent
   ],
   imports: [
     BrowserModule,

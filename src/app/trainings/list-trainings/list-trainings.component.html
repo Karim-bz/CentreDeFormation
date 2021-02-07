@@ -1,5 +1,5 @@
 <div class="row p-2">
-    <div class="col-md-3" *ngFor ="let item of training">
+    <div class="col-md-3" *ngFor ="let item of training; let i = index">
         <div class="card">
             <div class="card-body">
                 <div class="card-title">
@@ -12,9 +12,9 @@
                    Formateur : {{item.formateur}}
                 </div>
                 <span>
-                    <a href="#" class="btn btn-success btn-xs">Detail Employee</a>
+                    <a class="btn btn-success btn-xs" [routerLink]="['/detail-training',item.id]">Detail Formation</a>
                     <a href="#" (click)="editTraining(item)" class="btn btn-primary btn-xs">Edit Employee</a>
-                    <a (click)= "deleteTraining(item.id)" class="btn btn-danger btn-xs">Delete Employee</a>
+                    <a (click)= "deleteTraining(item.id)" class="btn btn-danger btn-xs">Supprimer Formation</a>
                 </span>
             </div>
         </div>
