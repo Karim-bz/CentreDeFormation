@@ -1,6 +1,10 @@
 # CentreFormation
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.5.
+It is an academic Project.
+- Learn How to Make CRUD in Angular.
+- Consume REST API's.
+- Make a Good UI using Angular Material. 
 
 ## Development server
 
